@@ -18,4 +18,4 @@ The dependencies goes into the `Admin_Terminal` folder, for example: `D:\Admin_T
 
 When opening Admin Terminal for the first time, it will prompt you to install all the dependencies.
 
-If any dependencies get deleated, it will get reinstalled when opened the next time.
+If any dependencies get deleated, the dependencies that got deleated will get reinstalled when opened the next time.
