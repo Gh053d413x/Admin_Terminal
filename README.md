@@ -14,8 +14,8 @@ The dependencies goes into the `Admin_Terminal` folder, for example: `D:\Admin_T
 
 ---
 
-# ⚠️ WARNING ⚠️
+## Installing Information
 
-If any of the dependencies are missing, the program will not work properly
+When opening Admin Terminal for the first time, it will prompt you to install all the dependencies.
 
-Do Not Try to delete any of the dependencies
+If any dependencies get deleated, it will get reinstalled when opened the next time.
