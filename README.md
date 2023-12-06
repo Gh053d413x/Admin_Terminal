@@ -10,7 +10,7 @@ The program can be used for free but you can not claim this program or its depen
 
 The program file is going wherever you put it, for example: `D:\Admin_Terminal\adminTerminal.py`
 
-The dependencies goes into the `Admin_Terminal` folder, for example: `D:\Admin_Terminal\<files>`
+The dependencies also goes wherever you put the program file, for example: `D:\Admin_Terminal\<files>`
 
 ---
 
