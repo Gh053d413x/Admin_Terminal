@@ -1,6 +1,5 @@
 import os
 import random
-import tempfile
 import time
 import sys
 from os.path import exists
