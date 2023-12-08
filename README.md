@@ -1,8 +1,6 @@
 # Admin Terminal Alpha v1.0
 
-The program can be used for free but you can not claim this program or its dependencies as your own.
-
-© Copyright Ghosted
+The program can be used for free because it is Open Source!
 
 ---
 
