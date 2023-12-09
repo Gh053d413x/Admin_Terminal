@@ -1,14 +1,16 @@
-              _           _         _______                  _             _     
-     /\      | |         (_)       |__   __|                (_)           | |    
-    /  \   __| |________  _ ____      | | ___ ____ ________  _ ____   ____| |   
-   / /\ \ / _  |  _   _ \| |  _ \     | |/ _ \  __|  _   _ \| |  _ \ / _  | |  
-  / ____ \ (_| | | | | | | | | | |    | |  __/ |  | | | | | | | | | | (_| | | 
- /_/    \_\____|_| |_| |_|_|_| |_|    |_|\___|_|  |_| |_| |_|_|_| |_|\____|_| 
+# Admin Terminal `Alpha`
 
+## Alpha 1.1
 
-## vAlpha 1.0
+Software is free, you can edit and customize it because it is Open Source!
 
-The program can be used for free because it is Open Source!
+---
+
+## Patch Notes
+
+- Added a new logo for the Actual Terminal it's self
+- Fixed Some Bugs where `info.py` would open even though other commands were entered. For Example: `create` --> `info.py` Expectation: `create` --> `create.py`
+- Moved everything from `info.py` to `adminTerminal.py` due to the reason above
 
 ---
 
