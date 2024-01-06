@@ -12,7 +12,7 @@ To even use this file (until it becomes an EXE file) Python will have to be inst
 
 When it does become an EXE file it will be able to be launched anywhere (there will be a dmg and deb files too), all of these will come out when offitially released
 
-Install Python at the [Python Website](www.python.org)
+Install Python at the [Python Website](https://www.python.org)
 
 ---
 
