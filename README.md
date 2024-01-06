@@ -1,16 +1,29 @@
 # Admin Terminal `Alpha`
 
-## Alpha 1.1
+## Alpha 1.2
 
 Software is free, you can edit and customize it because it is Open Source!
 
 ---
 
+## Instructions
+
+To even use this file (until it becomes an EXE file) Python will have to be installed in order to run this.
+
+When it does become an EXE file it will be able to be launched anywhere (there will be a dmg and deb files too), all of these will come out when offitially released
+
+Install Python at the [Python Website](www.python.org)
+
+---
+
 ## Patch Notes
 
-- Added a new logo for the Actual Terminal it's self
-- Fixed Some Bugs where `info.py` would open even though other commands were entered. For Example: `create` --> `info.py` Expectation: `create` --> `create.py`
-- Moved everything from `info.py` to `adminTerminal.py` due to the reason above
+-   Added Linux support
+-   [Experimental] Added Help Page
+-   Separated Version from Title
+-   Bug Fixes
+    
+MAC Support is in development! Try this on MAC and see if it works!
 
 ---
 
