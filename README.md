@@ -10,7 +10,7 @@ Software is free, you can edit and customize it because it is Open Source!
 
 To even use this file (until it becomes an EXE file) Python will have to be installed in order to run this.
 
-When it does become an EXE file it will be able to be launched anywhere and will come out when offitially released
+When it does become an EXE file it will be able to be launched anywhere and will come out when officially released
 
 Install Python at the [Python Website](https://www.python.org)
 
