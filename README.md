@@ -17,13 +17,10 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes
-
--   Added Linux support
--   [Experimental] Added Help Page
--   Separated Version from Title
--   Bug Fixes
-    
-MAC Support is in development! Try this on MAC and see if it works!
+-   Completely changed the file system (You now need File Mode to use it)
+-   Added Settings File
+-   Updated Help Page
+-   Added File Mode
 
 ---
 
