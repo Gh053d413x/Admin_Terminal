@@ -1,6 +1,6 @@
 # Admin Terminal `Alpha`
 
-## Alpha 1.2
+## Alpha 1.3
 
 Software is free, you can edit and customize it because it is Open Source!
 
