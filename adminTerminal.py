@@ -1,21 +1,18 @@
-# Admin Terminal Alpha v1.3
+# Admin Terminal Alpha v1.31
 # Made by Ghosted
-# Software is free, you can edit and customize it 
-# because it is Open Source!
-
-# Anything marked with a ## will be removed soon if not re-added
+# Software is open source, you can edit and customize and modify it anyway you want.
 
 import os
 import random
 import time
 import sys
-"import tkinter"
+"import tkinter as tk" # If not added in next update, it will be removed
 import traceback
-"import secrets"
+"import secrets" # If not added in next update, it will be removed
 import json
 from os.path import exists
 from pathlib import Path
-from tkinter import messagebox as msg
+from tkinter.messagebox import *
 
 if os.name == "posix":
     py_command = "python3"
@@ -34,7 +31,7 @@ try:
     if __name__ == "__main__":
         if len(sys.argv) > 1:
             if sys.argv[1] == "-debug":
-                msg.showinfo("Admin Terminal", "Debug Mode Enabled")
+                showinfo("Admin Terminal", "Debug Mode Enabled")
                 debug = True
 ##            elif sys.argv[1] == "-showError":
 ##                errorShow = True
@@ -45,7 +42,7 @@ try:
                 os.system(pause_command)
                 exit()
             else:
-                msg.showerror("Admin Terminal", f"Invalid Argument: {sys.argv[1]}")
+                showerror("Admin Terminal", f"Invalid Argument: {sys.argv[1]}")
                 print(f"Invalid Argument, {sys.argv}")
                 exit()
         else:
@@ -76,15 +73,17 @@ try:
     #files
     settingsFile = f"{winPath}\\settings.json"
 
-    os.system(f"{cls_command}")
+    os.system(cls_command)
 
     if not settingsFileExists:
-        msg.showerror("Admin Terminal", "Settings File does not exist. The settings file will now be installed", type="ok")
+        filePermission = askyesno("Admin Terminal - NO SETTINGS FILE!", "Settings file is not installed, would you like to install it?", icon="warning")
+        if filePermission == False or None:
+            exit()
         settings = """{
     "settings":[
         {
             "debugMode": false,
-            "version": "Version Alpha 1.3",
+            "version": "Version Alpha 1.31",
             "showAdvancedLogo": true,
             "author": "Made by Ghosted Alex",
             "showInstructions": true
@@ -170,16 +169,16 @@ try:
         elif userInput == "?":
             help()
         elif userInput == "":
-            os.system(f"{cls_command}")
+            os.system(cls_command)
             error = f"{text_decor.color.FAIL}Command is Empty!\nPlease enter a valid command{text_decor.style.END}\n"
             terminal()
         else:
-            os.system(f"{cls_command}")
+            os.system(cls_command)
             error = f"{text_decor.color.FAIL}Unknown Command: {userInput}\nPlease check if the command exists{text_decor.style.END}\n"
             terminal()
 
     def help():
-        os.system(f"{cls_command}")
+        os.system(cls_command)
         print('''Welcome to the Admin Terminal Help
 This page is experimental so this page is subject to change, new commands will get added here when added
 Available Commands:
@@ -194,31 +193,29 @@ File Mode Commands:
     exit - Exits File Mode
 
 If in File Mode, you can restart the Terminal to exit File Mode''')
-        os.system(f"{pause_command}")
-        os.system(f"{cls_command}")
+        os.system(pause_command)
+        os.system(cls_command)
         terminal()
 
     def patch_notes():
-        os.system(f"{cls_command}")
-        print(f'''{logo_txt}
+        os.system(cls_command)
+        print(f'''{version}
 Patch Notes:
--   Completely changed the file system (You now need File Mode to use it)
--   Added Settings File
--   Updated Help Page
--   Added File Mode''')
-        os.system(f"{pause_command}")
-        os.system(f"{cls_command}")
+-   Modified GUI [Graphical User Interface]
+-   Changed Text in Info Page''')
+        os.system(pause_command)
+        os.system(cls_command)
         terminal()
 
     def info():
-        os.system(f"{cls_command}")
-        print(f'''{logo_txt}
+        os.system(cls_command)
+        print(f'''{version}
 Made by Ghosted Alex
-Software is free, you can edit and customize it because it is Open Source!
+Software is open source, you can edit and customize and modify it anyway you want.
 The other python files in {winPath} are all of the dependencies for the Admin Terminal
 Check out the github at https://github.com/Gh053d413x/Admin_Terminal''')
-        os.system(f"{pause_command}")
-        os.system(f"{cls_command}")
+        os.system(pause_command)
+        os.system(cls_command)
         terminal()
 
     def fileMode():
@@ -287,13 +284,13 @@ Check out the github at https://github.com/Gh053d413x/Admin_Terminal''')
     terminal()
 except Exception as err:
     print(f"{text_decor.style.END}")
-    os.system(f"{cls_command}")
+    os.system(cls_command)
     lineNum = traceback.format_exc()
     if debug == True:
-        msg.showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception\nError: {err}\n\nFull Error: {lineNum}")
+        showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception\nError: {err}\n\nFull Error: {lineNum}")
         print(f"Admin Terminal has been terminated due to an exception\nError: {err}\n\nFull Error: {lineNum}")
     else:
-        msg.showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception\nError: {err}")
+        showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception\nError: {err}")
         print(f"Admin Terminal has been terminated due to an exception\nError: {err}\n\nFull Error: {lineNum}")
 except KeyboardInterrupt:
     print(text_decor.style.END)
