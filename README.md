@@ -1,6 +1,6 @@
 # Admin Terminal `Alpha`
 
-## Alpha 1.3
+## Alpha 1.31
 
 Software is free, you can edit and customize it because it is Open Source!
 
@@ -16,11 +16,10 @@ Install Python at the [Python Website](https://www.python.org)
 
 ---
 
-## Patch Notes
--   Completely changed the file system (You now need File Mode to use it)
--   Added Settings File
--   Updated Help Page
--   Added File Mode
+## Patch Notes:
+-   Modified GUI [Graphical User Interface]
+-   Changed Text in Info Page
+-   Fixed a Few Bugs
 
 ---
 
