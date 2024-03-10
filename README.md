@@ -1,8 +1,8 @@
 # Admin Terminal `Alpha`
 
-## Alpha 1.31
+Alpha 1.31
 
-Software is free, you can edit and customize it because it is Open Source!
+Software is open source, you can edit and customize and modify it anyway you want.
 
 ---
 
