@@ -1,6 +1,6 @@
 # Admin Terminal `Alpha`
 
-Alpha 1.31
+Alpha 1.4
 
 Software is open source, you can edit and customize and modify it anyway you want.
 
