@@ -6,6 +6,20 @@ Software is open source, you can edit and customize and modify it anyway you wan
 
 ---
 
+## ⚠️ WARNING ⚠️
+These listed libraries are required to run Admin Terminal!
+
+    `os`
+    `random`
+    `time`
+    `sys`
+    `tkinter`
+    `traceback`
+    `json`
+    `pathlib`
+
+---
+
 ## Instructions
 
 To even use this file (until it becomes an EXE file) Python will have to be installed in order to run this.
@@ -16,10 +30,17 @@ Install Python at the [Python Website](https://www.python.org)
 
 ---
 
-## Patch Notes:
--   Modified GUI [Graphical User Interface]
--   Changed Text in Info Page
--   Fixed a Few Bugs
+## Patch Notes (The Security Settings Update):
+- Added a password system
+- Added settings menu (type "settings" in the terminal to access them), you can still modify the settings via the settings file
+- Added new commands to the Help Page
+- Modified the Admin Terminal Logo
+
+You can now reset the settings file!
+
+You can also change the password as you wish
+
+More settings will be added soon
 
 ---
 
@@ -28,8 +49,6 @@ Install Python at the [Python Website](https://www.python.org)
 The program file is going wherever you put it, for example: `D:\Admin_Terminal\adminTerminal.py`
 
 The settings file will go in the same directory you put the admin terminal in, for example: `D:\Admin_Terminal\settings.json`
-
-The dependencies also goes wherever you put the program file, for example: `D:\Admin_Terminal\<files>`
 
 ---
 
