@@ -39,9 +39,9 @@ Install Python at the [Python Website](https://www.python.org)
 
 ## File and Folder Information
 
-The program file is going wherever you put it, for example: `D:\Admin_Terminal\adminTerminal.py`
+The program file is going wherever you put it, for example: `D:\Admin Terminal.py` or `D:\Admin_Terminal.exe`
 
-The settings file will go in the same directory you put the admin terminal in, for example: `D:\Admin_Terminal\settings.json`
+The settings file will go in the same directory you put the admin terminal in, for example: `D:\settings.json`
 
 ---
 
