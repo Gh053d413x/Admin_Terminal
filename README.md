@@ -23,6 +23,7 @@ These listed libraries are required to run Admin Terminal!
     `traceback`
     `json`
     `pathlib`
+    `subprocess`
 
 ---
 
