@@ -14,7 +14,7 @@ Do Not use the settings menu to reset the settings file as ALL settings will get
 
 ## ℹ️ INFO ℹ️
 
-The listed libraries below are required to run the terminal.
+The listed libraries below are required to run the terminal if using a python file.
 
     `os`
     `random`
