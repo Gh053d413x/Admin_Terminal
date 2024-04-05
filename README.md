@@ -6,12 +6,6 @@ Software is open source, you can edit and customize and modify it anyway you wan
 
 ---
 
-## ⚠️ WARNING ⚠️
-
-Do Not use the settings menu to reset the settings file as ALL settings will get deleted, file will remain but the Terminal will crash on attempting opening after reset
-
----
-
 ## ℹ️ INFO ℹ️
 
 The listed libraries below are required to run the terminal if using a python file.
