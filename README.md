@@ -47,6 +47,4 @@ The settings file will go in the same directory you put the admin terminal in, f
 
 ## Installing Information
 
-When opening Admin Terminal for the first time, it will prompt you to install all the dependencies and settings.
-
-If any dependencies get deleted, the dependencies that got deleted will get reinstalled when opened the next time, any deleted settings will have to be manually re-written.
+When opening Admin Terminal for the first time, it will prompt you to install the settings file.
