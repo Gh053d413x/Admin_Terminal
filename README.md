@@ -30,9 +30,7 @@ The listed libraries below are required to run the terminal.
 
 ## Instructions
 
-To even use this file (until it becomes an EXE file) Python will have to be installed in order to run this.
-
-When it does become an EXE file it will be able to be launched anywhere and will come out when officially released
+You can install it as an EXE file or a Python file, you will need to install python to use the python (original) version
 
 Install Python at the [Python Website](https://www.python.org)
 
