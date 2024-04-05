@@ -13,7 +13,8 @@ Do Not use the settings menu to reset the settings file as ALL settings will get
 ---
 
 ## ℹ️ INFO ℹ️
-These listed libraries are required to run Admin Terminal!
+
+The listed libraries below are required to run the terminal.
 
     `os`
     `random`
