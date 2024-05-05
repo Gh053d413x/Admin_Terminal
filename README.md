@@ -1,6 +1,6 @@
 # Admin Terminal `Alpha`
 
-Alpha 1.4.1
+Alpha 1.5
 
 Software is open source, you can edit and customize and modify it anyway you want.
 
@@ -19,6 +19,8 @@ The listed libraries below are required to run the terminal if using a python fi
     `json`
     `pathlib`
     `subprocess`
+    `shutil`
+    `datetime`
 
 ---
 
@@ -31,15 +33,15 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes:
--   Fixed a vulnerability bug where any script could be executed due to os.system and is now using the subprocess library
--   Fixed a bug where the settings file's contents were getting deleted from resetting via the settings menu
--   Added .EXE support
+-   Added a Backup and Restore function for the Settings File
 
 ---
 
 ## File and Folder Information
 
 The program file is going wherever you put it, for example: `D:\adminTerminal.py` or `D:\adminTerminal.exe`
+
+The settings file backups will go in the "backups" directory in the same directory you put the admin terminal in, for example: `D:\backups\settings_backup_2024-05-04_20-55.json`
 
 The settings file will go in the same directory you put the admin terminal in, for example: `D:\settings.json`
 
