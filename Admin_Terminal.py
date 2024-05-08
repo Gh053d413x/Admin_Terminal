@@ -219,9 +219,9 @@ try:
         if j_list[i].get("showAdvancedLogo") == True:
             print(logo)
         if j_list[i].get("password") == "":
-            password = "No Password Set!"
+            passwordMSG = "No Password Set!"
         elif j_list[i].get("password") != "":
-            password = j_list[i].get("password")
+            passwordMSG = j_list[i].get("password")
         usrinput = input(f"Password: {password}\nWelcome to the Admin Terminal Settings\nAvailable Options:\n- set-password\n- reset-settings\n- show-settings\n\nLeave blank to go back to main menu\n>>> ")
         subprocess.run(clear_command, shell=True)
         if usrinput == "set-password":
