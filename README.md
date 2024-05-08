@@ -8,8 +8,6 @@ Software is open source, you can edit and customize and modify it anyway you wan
 
 ## ℹ️ INFO ℹ️
 
-Alpha 1.5.1 Coming Soon, fixing vulnerabilities with the password
-
 The listed libraries below are required to run the terminal if using a python file.
 
     `os`
