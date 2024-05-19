@@ -1,4 +1,4 @@
-# Admin Terminal `Alpha`
+# Admin Terminal `Preview`
 
 Alpha 1.5
 
