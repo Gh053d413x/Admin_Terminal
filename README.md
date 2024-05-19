@@ -39,7 +39,7 @@ Install Python at the [Python Website](https://www.python.org)
 
 ## File and Folder Information
 
-The program file is going wherever you put it, for example: `D:\adminTerminal.py` or `D:\adminTerminal.exe`
+The program file is going wherever you put it, for example: `D:\Admin_Terminal.py` or `D:\Admin_Terminal.exe`
 
 The settings file backups will go in the "backups" directory in the same directory you put the admin terminal in, for example: `D:\backups\settings_backup_2024-05-04_20-55.json`
 
