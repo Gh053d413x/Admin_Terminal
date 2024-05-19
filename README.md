@@ -1,6 +1,6 @@
 # Admin Terminal `Preview`
 
-Alpha 1.5
+Preview 1w01a
 
 Software is open source, you can edit and customize and modify it anyway you want.
 
