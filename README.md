@@ -41,7 +41,7 @@ This is a preview, all patch notes are in the main branch
 
 The program file is going wherever you put it, for example: `D:\adminTerminal.py` or `D:\adminTerminal.exe`
 
-The settings file backups will go in the "backups" directory in the same directory you put the admin terminal in, for example: `D:\backups\settings_backup_2024-05-04_20-55.json`
+The settings file backups will go in the "backups" directory in the same directory you put the admin terminal in, for example: `D:\backups\settings_backup_2024-05-04_20-55-preview.json`
 
 The settings file will go in the same directory you put the admin terminal in, for example: `D:\settings.json`
 
