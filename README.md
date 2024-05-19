@@ -33,7 +33,7 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes:
--   Added a Backup and Restore function for the Settings File
+This is a preview, all patch notes are in the main branch
 
 ---
 
