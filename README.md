@@ -1,6 +1,4 @@
-# Admin Terminal `Alpha`
-
-Alpha 1.5
+# Admin Terminal `Alpha 1.6`
 
 Software is open source, you can edit and customize and modify it anyway you want.
 
@@ -8,7 +6,7 @@ Software is open source, you can edit and customize and modify it anyway you wan
 
 ## ℹ️ INFO ℹ️
 
-The listed libraries below are required to run the terminal if using a python file.
+The listed libraries below are required to run the terminal if using the python file.
 
     `os`
     `random`
@@ -21,6 +19,7 @@ The listed libraries below are required to run the terminal if using a python fi
     `subprocess`
     `shutil`
     `datetime`
+    `getpass`
 
 ---
 
@@ -33,7 +32,10 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes:
--   Added a Backup and Restore function for the Settings File
+-   Modified the help page
+-   Added modifiable password attempts system
+-   Modified the loading bar
+-   Removed Dev Setting
 
 ---
 
