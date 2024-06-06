@@ -1,4 +1,4 @@
-# Admin Terminal Alpha 1.6
+# Admin Terminal Alpha 1.7
 # Almost to full release!
 # Made by Ghosted
 # Software is open source, you can edit and customize and modify it anyway you want.
@@ -17,20 +17,18 @@ class text_decor:
         BOLD = '\033[1m'
         UNDERLINE = '\033[4m'
 
-import tkinter as tk
-from tkinter.messagebox import *
-
 settings = """{
     "settings":[
         {
             "devMode": false,
-            "version": "Alpha 1.6",
+            "version": "Alpha 1.7",
             "showAdvancedLogo": true,
             "author": "Made by Ghosted Alex",
             "showInstructions": true,
-            "password":"",
             "maxLogInAttempts":3,
-            "logInLevel":0
+            "users":[
+            
+            ]
         }
     ]
 }"""
@@ -43,14 +41,19 @@ try:
     import sys
     import traceback
     import json
-    from time import sleep
     from os.path import exists
     from pathlib import Path
     import shutil
     import datetime
     import getpass
-    import tkinter as tk
-    import tkinter.ttk as ttk
+    import hashlib
+    try:
+        import tkinter as tk
+        import tkinter.ttk as ttk
+        from tkinter import messagebox
+        noGUI = None
+    except ModuleNotFoundError:
+        noGUI = True
 
     if os.name == "posix":
         py_command = "python3"
@@ -79,6 +82,7 @@ try:
 
     # functions
     def loading_bar(total):
+        subprocess.run(clear_command, shell=True)
         for i in range(total+1):
             time.sleep(random.uniform(0.1, 0.5))
             percent_complete = (i / total) * 100
@@ -87,9 +91,18 @@ try:
     subprocess.run(clear_command, shell=True)
 
     if not settingsFileExists:
-        filePermission = askyesno("Admin Terminal - NO SETTINGS FILE!", "Settings file is not installed, would you like to install it?", icon="warning")
-        if filePermission == False or None:
-            exit()
+        if noGUI:
+            filePermission = input("Admin Terminal - NO SETTINGS FILE!\nSettings file is not installed, would you like to install it? (y/n)\n>>> ")
+            if filePermission == "n":
+                exit()
+            elif filePermission == "y" :
+                subprocess.run(clear_command, shell=True)
+            else:
+                exit()
+        else:
+            filePermission = messagebox.askyesno("Admin Terminal - NO SETTINGS FILE!", "Settings file is not installed, would you like to install it?", icon="warning")
+            if filePermission == False or None:
+                exit()
         file = open(settingsFile, "w+")
         file.write(settings)
         print("Waiting for Settings file download. . .")
@@ -136,18 +149,35 @@ try:
     if checkSum != 0:
         startActions = True
 
+    def hash_password(password):
+        return hashlib.sha256(password.encode('utf-8')).hexdigest()
+    subprocess.run(clear_command, shell=True)
+
     error = "\n\n"
     def logIn():
         global attempts, max_attempts
-        if j_list[i].get("password") != "":
-            signIn = getpass.getpass("Please enter the Admin Terminal Password\n")
-            if signIn == j_list[i].get("password"):
-                subprocess.run(clear_command, shell=True)
-                terminal()
-            elif signIn != j_list[i].get("password"):
+        users = j_list[i].get("users", [])
+        print(logo)
+        if users:
+            signInUser = input("Please enter your username:\n")
+            signInPass = getpass.getpass("Please enter your password:\n")
+            hashed_signInPass = hash_password(signInPass)  # Hash the input password
+            user_found = False
+            for user in users:
+                if user["username"] == signInUser and user["password"] == hashed_signInPass:  # Compare hashed passwords
+                    if not user["disabled"] == True:
+                        user_found = True
+                        subprocess.run(clear_command, shell=True)
+                        terminal()
+                        break
+                    else:
+                        subprocess.run(clear_command, shell=True)
+                        print(f"{signInUser} is disabled!\nIf this was a mistake, please contact your administrator.")
+                        logIn()
+            if not user_found:
                 attempts += 1
                 subprocess.run(clear_command, shell=True)
-                print(f"Password is incorrect!\nPlease try again. {attempts}/{max_attempts} Attempts Used")
+                print(f"Username or password is incorrect!\nPlease try again. {attempts}/{max_attempts} Attempts Used\nUsername used: {signInUser}")
                 if attempts != max_attempts:
                     logIn()
                 else:
@@ -155,11 +185,43 @@ try:
                     print(f"{attempts}/{max_attempts} Attempts Used, Please restart the terminal and try again")
                     subprocess.run(pause_command, shell=True)
                     sys.exit()
-            elif signIn == "":
-                subprocess.run(clear_command, shell=True)
-                print("Password is Empty!\nPlease Enter a valid password.")
-                logIn()
-        elif j_list[i].get("password") == "":
+        else:
+            username = input("There are currently no users, please enter a new username: ")
+            password = input("Please enter a new password: ")
+            createUser(username=username, password=password)
+
+    def createUser(username, password):
+        users = j_list[i].get("users", [])
+        hashed_password = hash_password(password)  # Hash the password
+        userDisabled = False
+        new_user = {"username": username, "password": hashed_password, "disabled": userDisabled}
+        users.append(new_user)
+        j_list[i]["users"] = users
+        with open(settingsFile, 'w') as file:
+            json.dump(j_obj, file, indent=4)
+        print("User added successfully.")
+        subprocess.run(pause_command, shell=True)
+        subprocess.run(clear_command, shell=True)
+        logIn()
+
+    def change_password(username, new_password):
+        users = j_list[i].get("users", [])
+        user_found = False
+        for user in users:
+            if user["username"] == username:
+                user["password"] = new_password                
+                user_found = True
+                break
+        if user_found:
+            j_list[i]["users"] = users
+            hashed_password = hash_password(new_password)  # Hash the password
+            with open(settingsFile, 'w') as file:
+                {"password": hashed_password}
+            print("Password changed successfully.\nPlease restart the terminal to take effect")
+            subprocess.run(pause_command, shell=True)
+            sys.exit()
+        else:
+            print("User not found.")
             terminal()
 
     def terminal():
@@ -173,10 +235,7 @@ try:
             print("Welcome to the Admin Terminal")
         print(logo_txt)
         if showInstructions == True:
-            if dev == True:
-                print("Type 'help', 'patch' or 'info' for more information\nType 'settings' to access the settings")
-            else:
-                print("Type 'help', 'patch' or 'info' for more information\nType 'settings' to access the settings")
+            print("Type 'help', 'patch' or 'info' for more information\nType 'settings' to access the settings")
         print(error)
         userInput = input(f">>> {text_decor.color.OKCYAN}")
         print(f"{text_decor.style.END}")
@@ -237,90 +296,83 @@ try:
         subprocess.run(pause_command, shell=True)
 
     def setting():
-        global attempts, max_attempts
-        if j_list[i].get("password") != "":
-            signIn = getpass.getpass("Please enter the Admin Terminal Password\n")
-            if signIn == j_list[i].get("password"):
-                subprocess.run(clear_command, shell=True)
-            elif signIn != j_list[i].get("password"):
-                attempts += 1
-                subprocess.run(clear_command, shell=True)
-                print(f"Password is incorrect!\nPlease try again. {attempts}/{max_attempts} Attempts Used")
-                if attempts != max_attempts:
-                    setting()
-                else:
-                    subprocess.run(clear_command, shell=True)
-                    print(f"{attempts}/{max_attempts} Attempts Used, Please restart the terminal and try again")
-                    subprocess.run(pause_command, shell=True)
-                    sys.exit()
-            elif signIn == "":
-                subprocess.run(clear_command, shell=True)
-                print("Password is Empty!\nPlease Enter a valid password.")
-                setting()
         subprocess.run(clear_command, shell=True)
         if j_list[i].get("showAdvancedLogo") == True:
             print(logo)
-        if j_list[i].get("password") == "":
-            passwordMSG = "No Password Set!"
-        elif j_list[i].get("password") != "":
-            passwordMSG = j_list[i].get("password")
-        usrinput = input(f"Password: {passwordMSG}\nWelcome to the Admin Terminal Settings\nAvailable Options:\n- set-password\n- reset-settings\n- show-settings\n\nLeave blank to go back to main menu\n>>> ")
+        usrinput = input(f"Welcome to the Admin Terminal Settings\nAvailable Options:\n- set-login-attempts\n- change-password\n- reset-settings\n- show-settings\n- add-user\n\nLeave blank to go back to main menu\n>>> ")
         subprocess.run(clear_command, shell=True)
-        if usrinput == "set-password":
-            passw = input("Enter a new password\nIf blank, the password won't be required to log in\n>>> ")
-            if passw:
-                file = open(settingsFile, "w")
-                j_list[i]["password"] = passw
-                try:
-                    # Writing to JSON file
-                    with open(settingsFile, "w") as file:
-                        json.dump(j_obj, file, indent=4)
-                        file.flush()  # Flush the buffer
-                except Exception as e:
-                    print("Error setting password")
-                    subprocess.run(pause_command, shell=True)
-                file = open(settingsFile, "r")
-                subprocess.run(clear_command, shell=True)
-                print("Password Set!")
-                sleep(3)
-                subprocess.run(clear_command, shell=True)
-                terminal()
+
+        if usrinput == "change-password":
+            username = input("Enter a username: ")
+            password = input("Enter a new password: ")
+            change_password(username=username, new_password=password)
+
+        elif usrinput == "set-login-attempts":
+            global max_attempts
+            file = open(settingsFile, "w")
+            subprocess.run(clear_command, shell=True)
+            if max_attempts != 0:
+                print(f"Current Max Attempts: {max_attempts}")
+            elif max_attempts == 0:
+                print(f"Current Max Attempts: Disabled")
+            editMaxAttempts = int(input("Enter attempts to modify\n>>> "))
+            if editMaxAttempts == 0:
+                j_list[i]["maxLogInAttempts"] = editMaxAttempts
+                print("Max Attempts Disabled")
+            elif editMaxAttempts > 0:
+                j_list[i]["maxLogInAttempts"] = editMaxAttempts
+                print(f"Max Attempts Set to {editMaxAttempts} attempts")
+            elif editMaxAttempts < 0:
+                print("Max Attempts can not be negative")
             else:
-                file = open(settingsFile, "w")
-                j_list[i]["password"] = passw
-                try:
-                    # Writing to JSON file
-                    with open(settingsFile, "w") as file:
-                        json.dump(j_obj, file, indent=4)
-                        file.flush()  # Flush the buffer
-                except Exception as e:
-                    print("Error removing password")
-                    subprocess.run(pause_command, shell=True)
-                file = open(settingsFile, "r")
-                subprocess.run(clear_command, shell=True)
-                print("Password Removed!")
-                sleep(3)
-                subprocess.run(clear_command, shell=True)
-                terminal()
+                print("Max Attempts was not able to be set")
+            file = open(settingsFile, "w")
+            subprocess.run(pause_command, shell=True)
+            logIn()
+
+        elif usrinput == "add-user":
+            username = input("Enter a new username\n>>>")
+            password = input("Enter a new password\n>>>")
+            createUser(username=username, password=password)
 
         elif usrinput == "reset-settings":
-            user_input = askyesno("Admin Terminal - Settings Reset", "Are you sure you want to reset ALL settings?\nThis action can not be undone.", icon="warning")
-            if user_input == True:
-                file = open(settingsFile, "w+")
-                file.write("")
-                print("Waiting for Settings File reset. . .")
-                loading_bar(10)
-                file.write(settings)
-                subprocess.run(clear_command, shell=True)
-                print("Waiting for Settings file reset. . .")
-                loading_bar(10)
-                subprocess.run(clear_command, shell=True)
-                print("Settings file has been reset!\n\nReset the terminal for changes to take effect")
-                subprocess.run(pause_command, shell=True)
-                subprocess.run(clear_command, shell=True)
-                sys.exit()
+            if noGUI:
+                user_input = input("Admin Terminal - Settings Reset\nAre you sure you want to reset ALL settings?\nThis action can not be undone. (y/n)\n>>> ")
+                if user_input == "y":
+                    file = open(settingsFile, "w+")
+                    file.write("")
+                    print("Waiting for Settings File reset. . .")
+                    loading_bar(10)
+                    file.write(settings)
+                    subprocess.run(clear_command, shell=True)
+                    print("Waiting for Settings file reset. . .")
+                    loading_bar(10)
+                    subprocess.run(clear_command, shell=True)
+                    print("Settings file has been reset!\n\nReset the terminal for changes to take effect")
+                    subprocess.run(pause_command, shell=True)
+                    subprocess.run(clear_command, shell=True)
+                    sys.exit()
+                else:
+                    setting()
             else:
-                setting()
+                user_input = messagebox.askyesno("Admin Terminal - Settings Reset", "Are you sure you want to reset ALL settings?\nThis action can not be undone.", icon="warning")
+                if user_input == True:
+                    file = open(settingsFile, "w+")
+                    file.write("")
+                    print("Waiting for Settings File reset. . .")
+                    loading_bar(10)
+                    file.write(settings)
+                    subprocess.run(clear_command, shell=True)
+                    print("Waiting for Settings file reset. . .")
+                    loading_bar(10)
+                    subprocess.run(clear_command, shell=True)
+                    print("Settings file has been reset!\n\nReset the terminal for changes to take effect")
+                    subprocess.run(pause_command, shell=True)
+                    subprocess.run(clear_command, shell=True)
+                    sys.exit()
+                else:
+                    setting()
+
         elif usrinput == "show-settings":
             subprocess.run(f"{type_command} settings.json", shell=True)
             print(j_list[i].get("settings"))
@@ -371,10 +423,9 @@ If in File Mode, you can restart or type "exit" the Terminal to exit File Mode''
             print(logo)
         print(f'''{version}
 Patch Notes:
--   Modified the help page
--   Added modifiable password attempts system
--   Modified the loading bar
--   Removed Dev Settings''')
+-   Replaced password system with user system
+-   Passwords are now encrypted
+-   Fixed bugs for python installations where essential modules are not present or for older versions of python (3.8.x and below)''')
         subprocess.run(pause_command, shell=True)
         subprocess.run(clear_command, shell=True)
         terminal()
@@ -454,14 +505,12 @@ Check out the github at https://github.com/Gh053d413x/Admin_Terminal''')
             subprocess.run(pause_command, shell=True)
             fileMode()
     logIn()
-    def saveSettigs(edit):
-        pass
 except Exception as err:
     print(f"{text_decor.style.END}")
     subprocess.run(clear_command, shell=True)
     lineNum = traceback.format_exc()
     try:
-        showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception or an essential module is not installed\nError: {err}\n\nFull Error: {lineNum}")
+        messagebox.showerror("Admin Terminal", f"Admin Terminal has been terminated due to an exception or an essential module is not installed\nError: {err}\n\nFull Error: {lineNum}")
     except:
         print(f"Admin Terminal has been terminated due to an exception or an essential module is not installed\nError: {err}\n\nFull Error: {lineNum}")
         subprocess.run(pause_command, shell=True)
