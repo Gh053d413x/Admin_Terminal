@@ -4,6 +4,14 @@ Software is open source, you can edit and customize and modify it anyway you wan
 
 ---
 
+## ⚠ WARNING ⚠
+
+Do Not change user's passwords within the terminal, if needed, delete the user tnen create a new one with the same credentials
+
+Changing a user's password will wipe the settings file, if testing for bugs, back up the settings file by typing `backup` into the main terminal window
+
+---
+
 ## ℹ️ INFO ℹ️
 
 The listed libraries below are required to run the terminal if using the python file.
