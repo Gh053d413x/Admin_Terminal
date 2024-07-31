@@ -1,4 +1,4 @@
-# Admin Terminal `Alpha 1.7`
+# Admin Terminal `Alpha 1.7.1`
 
 Software is open source, you can edit and customize and modify it anyway you want.
 
@@ -39,9 +39,10 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes:
--   Replaced password system with user system
--   Passwords are now encrypted
--   Fixed bugs for python installations where essential modules are not present or for older versions of python (3.8.x and below)
+-   Added 'admin' option for users
+-   Added 'adminPassword' - All is encrypted
+
+There will be more settings soon! - Make sure to save your users and the admin password!
 
 ---
 
@@ -52,6 +53,18 @@ The users are stored in the settings file with a custom made API
 The password is encrypted which means if you want to change your user's password then you have to do it within the settings menu in the terminal
 
 Accounts can be disabled
+
+Accounts can be set as admins
+
+---
+
+## Admin Password Information
+
+The admin password is stored in the settings file with a custom made API
+
+The password is encrypted which means if you want to change the admin password then you have to do it within the settings menu in the terminal
+
+it is used if a regular user is escalating to admin like changing a user's password
 
 ---
 ## File and Folder Information
