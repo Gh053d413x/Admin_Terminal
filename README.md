@@ -8,7 +8,7 @@ Software is free, you can edit and customize and modify it anyway you want.
 
 Do Not change user's passwords within the terminal, if needed, delete the user tnen create a new one with the same credentials
 
-Changing a user's password will wipe the settings file, if testing for bugs, back up the settings file by typing `backup` into the main terminal window
+Changing a user's password will wipe the settings file.
 
 ---
 
@@ -16,7 +16,11 @@ Changing a user's password will wipe the settings file, if testing for bugs, bac
 
 Alpha 1.8 Has a Release Date | Will be released between `Dec 21 2024` to `Jan 1 2025`
 
+---
 
+## Modding/Bug Testing Discression
+
+If making a Mod or testing for bugs, it's recommended to make sure to back up the settings file by either typing `backup` into the main terminal window or copying the settings file elsewere directly.
 
 ---
 
