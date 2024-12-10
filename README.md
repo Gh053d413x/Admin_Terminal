@@ -12,6 +12,14 @@ Changing a user's password will wipe the settings file, if testing for bugs, bac
 
 ---
 
+## 📰 NEWS 📰
+
+Alpha 1.8 Has a Release Date | Will be released between `Dec 21 2024` to `Jan 1 2025`
+
+
+
+---
+
 ## ℹ️ INFO ℹ️
 
 The listed libraries below are required to run the terminal if using the python file.
