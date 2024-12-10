@@ -1,6 +1,6 @@
 # Admin Terminal `Alpha 1.7.1`
 
-Software is open source, you can edit and customize and modify it anyway you want.
+Software is free, you can edit and customize and modify it anyway you want.
 
 ---
 
