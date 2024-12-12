@@ -137,14 +137,6 @@ input{
     from{outline: solid #009dff 10px;}
     to{outline: solid #626262 5px;}
 }
-@keyframes button-hovered {
-    from{outline: solid #626262 5px;}
-    to{outline: solid #009dff 5px;}
-}
-@keyframes button-not-hovered {
-    from{outline: solid #009dff 5px;}
-    to{outline: solid #626262 5px;}
-}
 iframe{
     animation: iframe-not-hovered 2.5s;
     outline: solid #626262 5px;
