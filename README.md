@@ -1,26 +1,28 @@
-# Admin Terminal `Alpha 1.7.1`
+# Admin Terminal `Alpha 1.8`
 
 The terminal is an administrative tool working from just basic commands like "about" to complex commands. Use Wisely! Software is free, you can edit and customize and modify it anyway you want.
 
 ---
 
-## ⚠ WARNING ⚠
-
-Do Not change user's passwords within the terminal, if needed, delete the user tnen create a new one with the same credentials
-
-Changing a user's password will wipe the settings file.
-
----
-
 ## 📰 NEWS 📰
 
-Alpha 1.8 Has a Release Date | Will be released between `Dec 21 2024` to `Jan 1 2025`
+Alpha 1.8 Has been Released!
+
+#### Marry Christmas!
 
 ---
 
-## Modding/Bug Testing Discression
+## Modding/Bug Testing Discression/Bug Reporting Information
 
 If making a Mod or testing for bugs, it's recommended to make sure to back up the settings file by either typing `backup` into the main terminal window or copying the settings file elsewere directly.
+
+Found any bugs? Here are steps to report it:
+-    Go to [this link](https://github.com/Gh053d413x/Admin_Terminal/issues/new/choose)
+-    Click `Get Started` for the `Bug Report` section
+-    Fill out the form
+-    Submit and I will do the rest
+
+It's that simple!
 
 ---
 
@@ -28,19 +30,19 @@ If making a Mod or testing for bugs, it's recommended to make sure to back up th
 
 The listed libraries below are required to run the terminal if using the python file.
 
-    `os`
-    `random`
-    `time`
-    `sys`
-    `tkinter`
-    `traceback`
-    `json`
-    `pathlib`
-    `subprocess`
-    `shutil`
-    `datetime`
-    `getpass`
-    `hashlib`
+    `os (Built-In)`
+    `random (Built-In)`
+    `time (Built-In)`
+    `sys (Built-In)`
+    `tkinter (Should be Built-In)`
+    `traceback (Built-In)`
+    `json (Built-In)`
+    `pathlib (Built-In)`
+    `subprocess (Built-In)`
+    `shutil (Built-In)`
+    `datetime (Built-In)`
+    `getpass (Built-In)`
+    `hashlib (Built-In)`
 
 ---
 
@@ -59,10 +61,24 @@ Install Python at the [Python Website](https://www.python.org)
 ---
 
 ## Patch Notes:
--   Added 'admin' option for users
--   Added 'adminPassword' - All is encrypted
 
-There will be more settings soon! - Make sure to save your users and the admin password!
+### Main Line Changes
+-   Re-added the legacy logo and can be turned on via the settings
+-   Updated to Python 3.13
+-   Updated the log in system (You can still log in the same way)
+-   Fixed a few bugs
+-   Changed the look of constant variables
+-   Fixed the wrong color bug - Some pages had the Blue Hue for input for the main page
+-   Fixed the Settings Wipe bug - Changing a user's password and/or enable/disable-ing the legacy logo would wipe the settings file
+
+### Technical Changes
+-   Added the TYPE_COMMAND variable - Use this to type file contents into the terminal at will
+-   Updated `text_decor.style.END` to `text_decor.RESET`
+-   Renamed `adminPassword` to `master_password`
+-   Added `NoReturn` from the `typing` package
+-   Renamed py_command, clear_command, pause_command and remove_command to PY_COMMAND, CLEAR_COMMAND, PAUSE_COMMAND and REMOVE_COMMAND
+-   Changed all constant variables from this format `const_var` to `CONST_VAR`
+
 
 ---
 
@@ -78,11 +94,11 @@ Accounts can be set as admins
 
 ---
 
-## Admin Password Information
+## Master Password Information
 
-The admin password is stored in the settings file with a custom made API
+The Master password is stored in the settings file with a custom made API
 
-The password is encrypted which means if you want to change the admin password then you have to do it within the settings menu in the terminal
+The password is encrypted which means if you want to change the master password then you have to do it within the settings menu in the terminal
 
 it is used if a regular user is escalating to admin like changing a user's password
 
