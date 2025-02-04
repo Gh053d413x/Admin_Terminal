@@ -4,6 +4,14 @@ The terminal is an administrative tool working from just basic commands like "ab
 
 ---
 
+## ⚠ WARNING ⚠
+
+DO NOT change the max login attempts through the terminal, if you do, it will wipe the settings file, the next update will fix that
+
+Change the max log in attempts via the settings file instead!
+
+---
+
 ## 📰 NEWS 📰
 
 Alpha 1.8 Has been Released!
