@@ -1,10 +1,10 @@
 @font-face {
     font-family: pixeloid;
-    src: url(../fonts/pixeloid-font/PixeloidSans-mLxMm.ttf);
+    src: url(PixeloidSans-mLxMm.ttf);
 }
 @font-face {
     font-family: pixeloid_bold;
-    src: url(../fonts/pixeloid-font/PixeloidSansBold-PKnYd.ttf);
+    src: url(PixeloidSansBold-PKnYd.ttf);
 }
 
 @font-face {
