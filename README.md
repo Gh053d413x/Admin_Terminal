@@ -1,22 +1,14 @@
-# Admin Terminal `Alpha 1.8`
+# Admin Terminal 
+
+`Alpha 1.8 | Beta Coming Soon?`
 
 The terminal is an administrative tool working from just basic commands like "about" to complex commands. Use Wisely! Software is free, you can edit and customize and modify it anyway you want.
 
 ---
 
-## ⚠ WARNING ⚠
-
-DO NOT change the max login attempts through the terminal, if you do, it will wipe the settings file, the next update will fix that
-
-Change the max log in attempts via the settings file instead!
-
----
-
 ## 📰 NEWS 📰
 
-Alpha 1.8 Has been Released!
-
-#### Marry Christmas!
+Admin Terminal is about to go into Beta!
 
 ---
 
