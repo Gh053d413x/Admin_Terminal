@@ -6,6 +6,14 @@ The terminal is an administrative tool working from just basic commands like "ab
 
 ---
 
+## ❗ REQUIREMENTS ❗
+
+PYTHON VERSION: `Python 3.10 or Higher`
+
+(More requirements will be coming soon)
+
+---
+
 ## 📰 NEWS 📰
 
 Admin Terminal is about to go into Beta!
