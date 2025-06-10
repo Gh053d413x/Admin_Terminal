@@ -105,7 +105,7 @@ Prior to the change becoming effective and update the "Last updated" date at the
 
 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
 
-## Contact Us
+## Contact Me
 
 If you have any questions about this Privacy Policy, You can contact me:
 
