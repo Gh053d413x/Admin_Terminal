@@ -1,4 +1,4 @@
-# Admin Terminal 
+[![Admin Terminal Logo](https://github.com/user-attachments/assets/e52740c7-57a4-4037-a469-c102d642279b)](#)
 
 `Alpha 1.8 | Beta Coming Soon?`
 
