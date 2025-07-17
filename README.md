@@ -1,8 +1,50 @@
 [![admin_terminal_logo_beta](https://github.com/user-attachments/assets/e6348997-b92a-4537-abc5-6c3739650573)](#)
 
-`Alpha 1.8 | Beta Coming Soon?`
+`25w20a/Snapshot`
 
 The terminal is an administrative tool working from just basic commands like "about" to complex commands. Use Wisely! Software is free, you can edit and customize and modify it anyway you want.
+
+---
+
+## 📰 NEWS 📰
+
+#### The 1st Snapshot is OUT!
+
+`25w20a` is the first snapshot, is it for Alpha 1.9 or Beta 1.0?
+
+I've finally decided to go with the snapshot system.
+
+## Patch Notes:
+
+### Main Line Changes
+`+ Added More Logo Options`
+
+`+ Added Safe Guards for Incompatible Versions`
+
+`+ Added a Crash Message when Admin Terminal Couldn't Even Enter the Early Stages of Starting Up`
+
+`+ Added a WARNING file that warns users about the dangers of modding the terminal`
+
+### Technical Changes
+`+ Added the "CUR_VER" Variable (Can be used Anywhere) - CUR_VER means Current Version`
+
+`+ Added the Ability to Generate hex, bytes and urlsafe tokens with the secrets library - Can also be used to create UUIDs, IDs and Keys!`
+
+`+ Added a CLI (Command Line Interface) Mode - Can be enabled in the settings.json file`
+
+`* Modified settings to change: show_instructions and max_log_in_attempts to instructions and max_attempts respectively`
+
+---
+
+## ⚠️ WARNING ⚠️
+
+This branch holds experimental versions of Admin Terminal
+
+These versions will most likely have characteristics like:
+
+- Buggy Behavior
+- Incomplete Feature Set
+- Very Experimental Features in General
 
 ---
 
@@ -10,13 +52,26 @@ The terminal is an administrative tool working from just basic commands like "ab
 
 PYTHON VERSION: `Python 3.10 or Higher`
 
-(More requirements will be coming soon)
+OS VERSION: Any OS that can run `Python 3.10 or Higher`
 
 ---
 
-## 📰 NEWS 📰
+The listed libraries below are required to run the terminal if using the python file.
 
-Admin Terminal is about to go into Beta!
+- `os`
+- `random`
+- `time`
+- `sys`
+- `tkinter` (Not Available in minimal version of Python)
+- `traceback`
+- `json`
+- `pathlib`
+- `subprocess`
+- `shutil`
+- `datetime`
+- `getpass`
+- `hashlib`
+- `secrets`
 
 ---
 
@@ -34,26 +89,6 @@ It's that simple!
 
 ---
 
-## ℹ️ INFO ℹ️
-
-The listed libraries below are required to run the terminal if using the python file.
-
-    `os (Built-In)`
-    `random (Built-In)`
-    `time (Built-In)`
-    `sys (Built-In)`
-    `tkinter (Should be Built-In)`
-    `traceback (Built-In)`
-    `json (Built-In)`
-    `pathlib (Built-In)`
-    `subprocess (Built-In)`
-    `shutil (Built-In)`
-    `datetime (Built-In)`
-    `getpass (Built-In)`
-    `hashlib (Built-In)`
-
----
-
 ## Instructions
 
 You can install it as an EXE file or a Python file, you will need to install python to use the python (original) version
@@ -65,28 +100,6 @@ Install Python at the [Python Website](https://www.python.org)
 1. Put the program file into the directory you want to run the terminal
 2. Run the program and let the settings file install
 3. Create a user then log in and have fun!
-
----
-
-## Patch Notes:
-
-### Main Line Changes
--   Re-added the legacy logo and can be turned on via the settings
--   Updated to Python 3.13
--   Updated the log in system (You can still log in the same way)
--   Fixed a few bugs
--   Changed the look of constant variables
--   Fixed the wrong color bug - Some pages had the Blue Hue for input for the main page
--   Fixed the Settings Wipe bug - Changing a user's password and/or enable/disable-ing the legacy logo would wipe the settings file
-
-### Technical Changes
--   Added the TYPE_COMMAND variable - Use this to type file contents into the terminal at will
--   Updated `text_decor.style.END` to `text_decor.RESET`
--   Renamed `adminPassword` to `master_password`
--   Added `NoReturn` from the `typing` package
--   Renamed py_command, clear_command, pause_command and remove_command to PY_COMMAND, CLEAR_COMMAND, PAUSE_COMMAND and REMOVE_COMMAND
--   Changed all constant variables from this format `const_var` to `CONST_VAR`
-
 
 ---
 
