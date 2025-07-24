@@ -6,6 +6,13 @@ The terminal is an administrative tool working from just basic commands like "ab
 
 ---
 
+## ℹ️ INFO ℹ️
+
+### Program
+
+Be aware that any future code and some existing code will go into the packages folder, either you can create your own packages or download packages from the packages branch
+
+---
 ## 📰 NEWS 📰
 
 #### The 1st Snapshot is OUT!
