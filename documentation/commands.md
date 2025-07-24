@@ -1,1 +1,1 @@
-# Admin Terminal Documentation / Modding
+# Admin Terminal Documentation / Commands
